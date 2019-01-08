@@ -1,0 +1,90 @@
+\documentclass[11pt, letterpaper]{article}
+\usepackage{floatflt}
+\usepackage[final]{graphicx}
+\usepackage[toc,page]{appendix}
+\usepackage{enumitem}
+\usepackage[table,xcdraw]{xcolor}
+
+\usepackage{amsbsy}
+\usepackage{color}
+\usepackage{multicol}
+\usepackage{hyperref}
+\newcommand{\bp}[1]{\textcolor{red}{#1}}
+\usepackage{geometry} 
+
+\usepackage{stackengine}
+\def\yenrule{\rule{1.3ex}{.1ex}}
+\def\textyen{\renewcommand\stacktype{L}\stackon[.4ex]{\stackon[.65ex]{Y}{\yenrule}}{\yenrule}}
+
+
+\frenchspacing
+
+\geometry{
+	top=1.05in, % Top margin
+	bottom=1.05in, % Bottom margin
+	left=1.05in, % Left margin
+	right=1.05in, % Right margin
+	%showframe, % Uncomment to show how the type block is set on the page
+}
+
+%\renewcommand\familydefault{\sfdefault}
+\sloppy
+\definecolor{grey}{gray}{0.5}
+
+\def\home{\symbol{126}}
+\newfont{\agnb}{pagd at 10pt}   %normal, bold
+\newfont{\aghb}{pagd at 12pt}   %gross, bold
+\newfont{\aghhb}{pagd at 14pt}   %gross, bold
+\newfont{\ags}{pagk at 6pt}     %scriptsize
+\newfont{\agf}{pagk at 7pt}     %footnotesize
+\newfont{\agsm}{pagk at 8pt}     %small
+\newfont{\agn}{pagk at 10pt}     %normal
+\newfont{\agns}{pagko at 10pt}     %slanted
+\newfont{\agnbs}{pagdo at 10pt}     %slanted, bold
+
+\usepackage{fancyheadings}
+\pagestyle{fancy}
+
+\setlength{\headrulewidth}{0.4pt}
+\setlength{\footrulewidth}{0.4pt}
+\rhead{  {\small LSST Internships at Fermilab }}
+
+\newcommand{\etmiss}{\mbox{$\rm \Eslash_{T}\!$                        }}
+\newcommand{\Eslash}{\mbox{$\rm E \kern-0.6em\slash$                }}
+\newcommand\randbem[1]{ \begin{minipage}[t]{0.11\textwidth} \textcolor{grey}{#1} \end{minipage}\hfill}
+
+\def\blueline{
+  \begin{minipage}[b]{0.1\textwidth}\end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.875\textwidth}
+    \textcolor{grey}{\hrulefill}
+  \end{minipage}
+}
+
+\usepackage{etoc}
+
+\begin{document}
+
+%abstract and title page, I believe this has to be uploaded separately
+\pagenumbering{gobble}  %switch off page numbering for abstract, title pages and supplement pages
+\thispagestyle{empty}
+\include{abstract_page}
+
+\setcounter{section}{0}
+%the proposal narrative
+\newpage
+\clearpage
+\pagenumbering{arabic} %switch on again and set to 1 for actual narrative
+\setcounter{page}{1}
+\input{narrative}
+
+%the budget justification
+%\newpage
+%\clearpage
+\input{budget}
+
+
+\end{document}
+
+
+
